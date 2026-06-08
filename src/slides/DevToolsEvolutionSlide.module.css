@@ -1,0 +1,294 @@
+.devToolsEvolution {
+  background: var(--bg-deep);
+  flex-direction: column;
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+  gap: 3.5rem;
+}
+
+/* Orbs — dramatic positioning */
+.orb1 {
+  width: 500px;
+  height: 500px;
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, var(--blue-glow), transparent 70%);
+  opacity: 0.25;
+}
+.orb2 {
+  width: 600px;
+  height: 600px;
+  bottom: -20%;
+  right: -15%;
+  background: radial-gradient(circle, var(--purple), transparent 70%);
+  opacity: 0.2;
+}
+.orb3 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, var(--green), transparent 70%);
+  opacity: 0.12;
+}
+
+/* Header */
+.header {
+  text-align: left;
+}
+.title {
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--purple), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.subtitle {
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  flex: 0 0 auto;
+}
+
+.timelineLine {
+  display: none;
+}
+
+.synergyLine {
+  display: none;
+}
+
+.activeTag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
+
+/* Era cards */
+.eraColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 0;
+}
+
+.eraCard {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 280px;
+  flex: 1 1 auto;
+  padding: 1.4rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  animation: none;
+}
+
+.eraCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--era-glow);
+  box-shadow: 0 0 40px -10px var(--era-glow),
+              0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.era0 { animation-delay: 0.1s; }
+.era1 { animation-delay: 0.3s; }
+.era2 {
+  animation-delay: 0.5s;
+  border-color: rgba(63, 185, 80, 0.3);
+  background: rgba(63, 185, 80, 0.04);
+}
+
+/* Progressive disclosure */
+.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.eraIcon {
+  font-size: 2.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px var(--era-glow));
+}
+
+.eraLabel {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  text-shadow: 0 0 30px var(--era-glow);
+}
+
+.eraName {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.eraDesc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0.8;
+  max-width: 220px;
+}
+
+.eraDate {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(63, 185, 80, 0.08);
+  border-radius: 99px;
+  border: 1px solid rgba(63, 185, 80, 0.15);
+}
+
+/* Example product badge */
+.exampleBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.exampleLogo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px var(--era-glow));
+}
+.examplePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+.exampleLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Arrow between cards */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 20px var(--era-glow), 0 0 40px var(--era-glow);
+  flex-shrink: 0;
+  width: 2rem;
+  align-self: center;
+  margin-bottom: 5.5rem;
+}
+
+.arrowVisible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+.arrowHidden {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.7; transform: translateY(-50%) translateX(0); }
+  50% { opacity: 1; transform: translateY(-50%) translateX(6px); }
+}
+
+/* Punchline */
+.punchline {
+  text-align: center;
+}
+.punchlineText {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--blue-glow), var(--purple), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

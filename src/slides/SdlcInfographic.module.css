@@ -1,0 +1,29 @@
+.sdlcInfographic {
+  background: var(--background);
+  padding: 0;
+}
+
+.title { display: none; }
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.infographic {
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.orb1 { display: none; }
+.orb2 { display: none; }

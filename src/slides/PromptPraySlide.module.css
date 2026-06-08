@@ -1,0 +1,211 @@
+.slide {
+  background: var(--background);
+  flex-direction: column;
+  padding: 0 0 44px 0;
+}
+
+.orb1 {
+  width: 380px; height: 380px;
+  top: -80px; right: -40px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    var(--orange, var(--accent)),
+    color-mix(in srgb, var(--accent) 30%, transparent) 50%,
+    transparent 70%
+  );
+}
+.orb2 {
+  width: 300px; height: 300px;
+  bottom: -60px; left: 40px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--purple-deep),
+    color-mix(in srgb, var(--purple-deep) 25%, transparent) 60%,
+    transparent 75%
+  );
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.body {
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column;
+  justify-content: center; flex: 1; min-height: 0;
+}
+
+/* Layout */
+.columns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 440px;
+}
+
+.columnTitle {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+}
+
+.naiveTitle {
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+.realTitle {
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* VS divider */
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 60px;
+  align-self: center;
+}
+
+.vsText {
+  flex-shrink: 0;
+  padding: 12px 28px;
+  border-radius: 100px;
+  border: 1px solid rgba(110,64,201,0.7);
+  background: rgba(110,64,201,0.18);
+  font-size: 20px;
+  font-weight: 800;
+  color: #c4a8ff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(110,64,201,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* Left: naive two-step flow */
+.naiveFlow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.naiveStep {
+  width: 210px;
+  padding: 1.4rem 1rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(139,148,158,0.12);
+  border-left: 3px solid rgba(139,148,158,0.55);
+}
+
+.flowArrow {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: rgba(139,148,158,0.7);
+  margin: 1px 0;
+}
+
+.blockLabel {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.prayHint {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(139,148,158,0.9);
+}
+
+/* Right: engineering stack */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.layer {
+  --c: var(--accent);
+  padding: 0.34rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: clamp(10px, 1.05vw, 13px);
+  letter-spacing: 0.3px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(139,148,158,0.12);
+  border-left: 3px solid var(--c);
+  position: relative;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.layerLabel {
+  position: relative;
+  z-index: 1;
+  color: var(--text);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Progressive disclosure */
+.revealed {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.unrevealed {
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Accent alternates blue / purple per category, matching previous slide */
+.green  { --c: var(--accent); }
+.yellow { --c: var(--purple); }
+.blue   { --c: var(--accent); }
+.orange { --c: var(--purple); }
+.pink   { --c: var(--accent); }
+.cyan   { --c: var(--purple); }
+.purple { --c: var(--accent); }

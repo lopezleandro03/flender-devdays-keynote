@@ -1,0 +1,152 @@
+.agenticDivider {
+  background: var(--bg-deep);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+/* ── orbs ── */
+.orb1 {
+  width: 600px;
+  height: 600px;
+  top: -160px;
+  left: -140px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 35%, transparent) 45%,
+    transparent 70%
+  );
+  animation: pulse1 6s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 440px;
+  height: 440px;
+  bottom: -80px;
+  right: -60px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--purple-deep),
+    color-mix(in srgb, var(--purple-deep) 35%, transparent) 50%,
+    transparent 75%
+  );
+  animation: pulse2 8s ease-in-out infinite;
+}
+
+.orb3 {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  right: 15%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--cyan),
+    color-mix(in srgb, var(--cyan) 25%, transparent) 50%,
+    transparent 70%
+  );
+  opacity: 0.35;
+  animation: pulse1 7s ease-in-out infinite reverse;
+}
+
+@keyframes pulse1 {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+@keyframes pulse2 {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%      { transform: scale(1.06); opacity: 0.85; }
+}
+
+/* ── floating skill cloud ── */
+.skillCloud {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.skillTag {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  color: color-mix(in srgb, var(--accent) 70%, var(--text));
+  white-space: nowrap;
+  opacity: 0.45;
+  animation: float 12s ease-in-out infinite;
+}
+
+.skillTag:nth-child(1) { top: 12%; left: 6%;  animation-delay: 0s; }
+.skillTag:nth-child(2) { top: 8%;  right: 8%; animation-delay: -2s; }
+.skillTag:nth-child(3) { top: 38%; left: 3%;  animation-delay: -4s; }
+.skillTag:nth-child(4) { bottom: 22%; left: 8%;  animation-delay: -6s; }
+.skillTag:nth-child(5) { bottom: 16%; right: 5%; animation-delay: -8s; }
+.skillTag:nth-child(6) { top: 20%; right: 4%; animation-delay: -10s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ── body ── */
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-height: 0;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 20px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.title {
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1;
+  color: var(--text);
+  margin: 0;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 500;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  color: var(--accent);
+  max-width: 700px;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+.hook {
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 500;
+  color: var(--text-muted);
+  max-width: 580px;
+  line-height: 1.5;
+  margin: 0;
+}
