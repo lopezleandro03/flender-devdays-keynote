@@ -20,6 +20,8 @@ import anwbdevdayIqPlatformSlide from './src/slides/IqPlatformSlide.jsx'
 import anwbdevdayUnlockIntelligenceSlide from './src/slides/UnlockIntelligenceSlide.jsx'
 import anwbdevdayCopilotCliScreenSlide from './src/slides/CopilotCliScreenSlide.jsx'
 import anwbdevdayDemoAnnouncementSlide from './src/slides/DemoAnnouncementSlide.jsx'
+import RolesTraditionalSlide from './src/slides/RolesTraditionalSlide.jsx'
+import RolesConvergenceSlide from './src/slides/RolesConvergenceSlide.jsx'
 import anwbdevdayClosingQuoteSlide from './src/slides/ClosingQuoteSlide.jsx'
 import { GenericThankYouSlide as ThankYouSlide } from '@deckio/deck-engine'
 import CustomThankYouSlide from './src/slides/ThankYouSlide.jsx'
@@ -45,6 +47,8 @@ export default {
     anwbdevdayDevToolsEvolutionSlide,
     BigPictureDivider,
     anwbdevdaySdlcInfographic,
+    RolesTraditionalSlide,
+    RolesConvergenceSlide,
     anwbdevdayClosingQuoteSlide,
     structuredvibecodingClosingSlide,
     CustomThankYouSlide,

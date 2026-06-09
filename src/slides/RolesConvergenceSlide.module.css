@@ -1,0 +1,239 @@
+.rolesConvergence {
+  background: var(--background);
+  padding: 0 0 44px 0;
+}
+
+.orb1 {
+  width: 450px;
+  height: 450px;
+  top: -140px;
+  left: 30%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    var(--cyan),
+    color-mix(in srgb, var(--accent) 20%, transparent) 50%,
+    transparent 70%
+  );
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  bottom: -80px;
+  right: -60px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--purple-deep),
+    color-mix(in srgb, var(--purple-deep) 20%, transparent) 60%,
+    transparent 75%
+  );
+}
+
+.body {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ---- Diagram ---- */
+
+.diagram {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  flex-shrink: 0;
+}
+
+.aiRing {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.aiLabel {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: unspin 30s linear infinite;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+@keyframes unspin {
+  to { transform: translateX(-50%) rotate(-360deg); }
+}
+
+.arrow {
+  position: absolute;
+  color: var(--accent);
+  font-size: 1rem;
+  animation: unspin 30s linear infinite;
+}
+
+/* ---- Role circles (overlapping Venn) ---- */
+
+.roleCircle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.engineerCircle {
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 50%, transparent), color-mix(in srgb, var(--cyan) 20%, transparent) 80%);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.designCircle {
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--cyan) 50%, transparent), color-mix(in srgb, var(--accent) 20%, transparent) 80%);
+  border: 1px solid color-mix(in srgb, var(--cyan) 40%, transparent);
+}
+
+.pmCircle {
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--purple) 50%, transparent), color-mix(in srgb, var(--accent) 15%, transparent) 80%);
+  border: 1px solid color-mix(in srgb, var(--purple) 40%, transparent);
+}
+
+.circleLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.circleFocus {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+/* ---- Artifact labels between roles ---- */
+
+.artifactLabel {
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.artifactCode {
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.artifactJourneys {
+  top: 55%;
+  right: 20px;
+}
+
+.artifactRequirements {
+  top: 55%;
+  left: 10px;
+}
+
+/* ---- Center sphere ---- */
+
+.centerSphere {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--foreground), var(--muted-foreground));
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--foreground) 15%, transparent);
+}
+
+/* ---- Callout ---- */
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 360px;
+}
+
+.calloutLead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.bullets {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.bullets li {
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+}
