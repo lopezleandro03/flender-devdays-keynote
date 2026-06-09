@@ -1,7 +1,7 @@
 .contactDetails {
   background: #ffffff;
   flex-direction: column;
-  padding: 0 0 44px 0;
+  padding: 0;
 }
 
 .body {
@@ -73,8 +73,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 0;
   gap: 0;
 }
 
@@ -144,20 +146,12 @@
   color: #0078d4;
 }
 
-.qrPlaceholder {
-  width: 4rem;
-  height: 4rem;
-  border: 2px dashed #0078d4;
+.qrImage {
+  width: 20rem;
+  height: 20rem;
+  object-fit: contain;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.qrText {
-  color: #0078d4;
-  font-size: 0.75rem;
-  font-weight: 600;
+  margin-top: 1.25rem;
 }
 
 .microsoftPlaceholder {
