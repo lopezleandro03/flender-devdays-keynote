@@ -1,5 +1,6 @@
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
 import styles from './ThankYouSlide.module.css'
+import flenderLogo from '../data/logos/flender.png'
 
 export default function ThankYouSlide({ index }) {
   return (
@@ -18,6 +19,7 @@ export default function ThankYouSlide({ index }) {
           </Editable>
           <div className={styles.divider} />
           <div className={styles.logos}>
+            <img src={flenderLogo} alt="Flender" className={styles.logo} />
             <svg className={styles.logo} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft">
               <rect x="0" y="0" width="11" height="11" fill="#f25022" />
               <rect x="12" y="0" width="11" height="11" fill="#7fba00" />
