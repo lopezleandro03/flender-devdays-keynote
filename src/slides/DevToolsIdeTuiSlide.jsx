@@ -1,3 +1,4 @@
+import React from 'react'
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
 import vscodeLogo from './anwb-devday/data/logos/vscode.svg'
 import copilotCliLogo from './anwb-devday/data/logos/github-copilot-cli.png'
@@ -51,28 +52,30 @@ export default function DevToolsIdeTuiSlide({ index, project }) {
         <div className={styles.splitLayout}>
           <div className={styles.cardsPanel}>
             {eras.map((era, i) => (
-              <div key={era.id} className={styles.eraGroup}>
+              <React.Fragment key={era.id}>
                 {i > 0 && <div className={styles.arrow}>→</div>}
-                <div className={styles.eraCard} style={{ '--era-glow': era.glow }}>
-                  <div className={styles.eraIcon}>{era.icon}</div>
-                  <div className={styles.eraLabel}>{era.label}</div>
-                  <div className={styles.eraName}>
-                    <Editable as="span" id={`slide.eras.${era.id}.name`}>
-                      {era.name}
-                    </Editable>
+                <div className={styles.eraGroup}>
+                  <div className={styles.eraCard} style={{ '--era-glow': era.glow }}>
+                    <div className={styles.eraIcon}>{era.icon}</div>
+                    <div className={styles.eraLabel}>{era.label}</div>
+                    <div className={styles.eraName}>
+                      <Editable as="span" id={`slide.eras.${era.id}.name`}>
+                        {era.name}
+                      </Editable>
+                    </div>
+                    <div className={styles.eraDesc}>
+                      <Editable as="span" id={`slide.eras.${era.id}.desc`}>
+                        {era.desc}
+                      </Editable>
+                    </div>
+                    <div className={styles.eraDate}>{era.era}</div>
                   </div>
-                  <div className={styles.eraDesc}>
-                    <Editable as="span" id={`slide.eras.${era.id}.desc`}>
-                      {era.desc}
-                    </Editable>
+                  <div className={styles.exampleBadge}>
+                    <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
+                    <span className={styles.exampleLabel}>{era.exampleLabel}</span>
                   </div>
-                  <div className={styles.eraDate}>{era.era}</div>
                 </div>
-                <div className={styles.exampleBadge}>
-                  <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
-                  <span className={styles.exampleLabel}>{era.exampleLabel}</span>
-                </div>
-              </div>
+              </React.Fragment>
             ))}
           </div>
 
