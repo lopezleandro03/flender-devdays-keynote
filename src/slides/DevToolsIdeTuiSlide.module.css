@@ -65,7 +65,6 @@
   display: flex;
   align-items: center;
   gap: 3rem;
-  flex: 1;
   min-height: 0;
 }
 

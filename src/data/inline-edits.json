@@ -2,5 +2,10 @@
   "slide.rightTitle": "WHAT AGENTIC ENGINEERING IS",
   "slide.quoteLine2": "Start harnessing agents that will write code for you.",
   "cover.eyebrow": "FLENDER DEVDAYS",
-  "cover.subtitle": "Flender DevDays"
+  "cover.subtitle": "Flender DevDays",
+  "slide.subtitle": {
+    "style": {
+      "color": "var(--foreground)"
+    }
+  }
 }
