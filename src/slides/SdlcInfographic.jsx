@@ -1,5 +1,5 @@
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
-import tuiVideo from '../../.github/attachments/attach-2026-05-29-13-34-19-edited-1780975820083.mp4'
+import sdlcImage from './anwb-devday/composed/data/sdlc-hourglass.png'
 import styles from './SdlcInfographic.module.css'
 
 export default function SdlcInfographic({ index, project }) {
@@ -10,15 +10,12 @@ export default function SdlcInfographic({ index, project }) {
       <div className={`orb ${styles.orb2}`} />
 
       <div className={`${styles.body} content-frame content-gutter`}>
-        <Editable as="h2" id="slide.title" className={styles.title}>Terminal User Interfaces</Editable>
-        <div className={styles.videoWrapper}>
-          <video
-            src={tuiVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={styles.video}
+        <Editable as="h2" id="slide.title" className={styles.title}>SDLC in the Agentic Engineering Era</Editable>
+        <div className={styles.imageWrapper}>
+          <img
+            src={sdlcImage}
+            alt="SDLC powered by AI is now an hourglass — comparing the old linear SDLC with the new agentic hourglass model"
+            className={styles.infographic}
           />
         </div>
       </div>

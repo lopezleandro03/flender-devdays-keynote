@@ -14,6 +14,7 @@ import anwbdevdaySdlcInfographic from './src/slides/SdlcInfographic.jsx'
 import anwbdevdayDevToolsIdeTuiSlide from './src/slides/DevToolsIdeTuiSlide.jsx'
 import anwbdevdayDevToolsTuiAdeSlide from './src/slides/DevToolsTuiAdeSlide.jsx'
 import anwbdevdayDevToolsEvolutionSlide from './src/slides/DevToolsEvolutionSlide.jsx'
+import BigPictureDivider from './src/slides/BigPictureDivider.jsx'
 import structuredvibecodingClosingSlide from './src/slides/ClosingSlide.jsx'
 import anwbdevdayIqPlatformSlide from './src/slides/IqPlatformSlide.jsx'
 import anwbdevdayUnlockIntelligenceSlide from './src/slides/UnlockIntelligenceSlide.jsx'
@@ -42,6 +43,8 @@ export default {
     anwbdevdayDevToolsIdeTuiSlide,
     anwbdevdayDevToolsTuiAdeSlide,
     anwbdevdayDevToolsEvolutionSlide,
+    BigPictureDivider,
+    anwbdevdaySdlcInfographic,
     anwbdevdayClosingQuoteSlide,
     structuredvibecodingClosingSlide,
     CustomThankYouSlide,
