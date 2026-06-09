@@ -1,23 +1,9 @@
-import React from 'react'
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
-import vscodeLogo from './anwb-devday/data/logos/vscode.svg'
 import copilotCliLogo from './anwb-devday/data/logos/github-copilot-cli.png'
 import copilotAppLogo from './anwb-devday/data/logos/github-copilot-app.png'
-import styles from './DevToolsEvolutionSlide.module.css'
+import styles from './DevToolsTuiAdeSlide.module.css'
 
 const eras = [
-  {
-    id: 'ide',
-    icon: '🖥️',
-    label: 'IDE',
-    name: 'Integrated Dev Environment',
-    desc: 'GUI-first. Extensions. Language servers. Deep integration. Still the powerhouse for complex projects.',
-    era: '2000s–2020s',
-    glow: 'var(--blue-glow)',
-    exampleLogo: vscodeLogo,
-    exampleAlt: 'VS Code',
-    exampleLabel: 'VS Code',
-  },
   {
     id: 'tui',
     icon: '⌨️',
@@ -44,13 +30,12 @@ const eras = [
   },
 ]
 
-export default function DevToolsEvolutionSlide({ index, project }) {
+export default function DevToolsTuiAdeSlide({ index, project }) {
   return (
-    <Slide index={index} className={styles.devToolsEvolution}>
+    <Slide index={index} className={styles.slide}>
       <div className="accent-bar" />
       <div className={`orb ${styles.orb1}`} />
       <div className={`orb ${styles.orb2}`} />
-      <div className={`orb ${styles.orb3}`} />
 
       <div className={`${styles.body} content-frame content-gutter`}>
         <div className={styles.header}>
@@ -58,18 +43,15 @@ export default function DevToolsEvolutionSlide({ index, project }) {
             Developer Tools Are Evolving
           </Editable>
           <Editable as="p" id="slide.subtitle" className={styles.subtitle}>
-            An improving experience for humans and agents to collaborate
+            From Terminal UI to Agent Development Environment
           </Editable>
         </div>
 
-        <div className={styles.timeline}>
-          {eras.map((era, i) => (
-            <React.Fragment key={era.id}>
-              <div className={styles.eraColumn} style={{ '--era-glow': era.glow }}>
-                <div
-                  className={`${styles.eraCard} ${styles[`era${i}`]}`}
-                  style={{ '--era-glow': era.glow }}
-                >
+        <div className={styles.splitLayout}>
+          <div className={styles.cardsPanel}>
+            {eras.map((era, i) => (
+              <div key={era.id} className={styles.eraGroup}>
+                <div className={styles.eraCard} style={{ '--era-glow': era.glow }}>
                   <div className={styles.eraIcon}>{era.icon}</div>
                   <div className={styles.eraLabel}>{era.label}</div>
                   <div className={styles.eraName}>
@@ -85,25 +67,21 @@ export default function DevToolsEvolutionSlide({ index, project }) {
                   <div className={styles.eraDate}>{era.era}</div>
                 </div>
                 <div className={styles.exampleBadge}>
-                  {era.exampleLogo ? (
-                    <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
-                  ) : (
-                    <span className={styles.examplePlaceholder}>TBD</span>
-                  )}
+                  <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
                   <span className={styles.exampleLabel}>{era.exampleLabel}</span>
                 </div>
               </div>
-              {i < eras.length - 1 && (
-                <div className={styles.arrow}>→</div>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className={styles.punchline}>
-          <Editable as="p" id="slide.punchline" className={styles.punchlineText}>
-            Evolution, not elimination — different tools for different moments.
-          </Editable>
+          <div className={styles.videoPanel}>
+            <div className={styles.videoPlaceholder}>
+              <span className={styles.placeholderIcon}>🎬</span>
+              <Editable as="p" id="slide.videoPlaceholder" className={styles.placeholderText}>
+                ADE demo video coming soon
+              </Editable>
+            </div>
+          </div>
         </div>
       </div>
 

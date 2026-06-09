@@ -1,9 +1,8 @@
-import React from 'react'
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
 import vscodeLogo from './anwb-devday/data/logos/vscode.svg'
 import copilotCliLogo from './anwb-devday/data/logos/github-copilot-cli.png'
-import copilotAppLogo from './anwb-devday/data/logos/github-copilot-app.png'
-import styles from './DevToolsEvolutionSlide.module.css'
+import tuiVideo from '../../.github/attachments/attach-2026-05-29-13-34-19-edited-1780975820083.mp4'
+import styles from './DevToolsIdeTuiSlide.module.css'
 
 const eras = [
   {
@@ -30,27 +29,14 @@ const eras = [
     exampleAlt: 'GitHub Copilot CLI',
     exampleLabel: 'Copilot CLI',
   },
-  {
-    id: 'ade',
-    icon: '🤖',
-    label: 'ADE',
-    name: 'Agent Development Environment',
-    desc: 'Agents orchestrate. Humans steer. Purpose-built for autonomous, multi-step engineering.',
-    era: '2026 →',
-    glow: 'var(--green)',
-    exampleLogo: copilotAppLogo,
-    exampleAlt: 'GitHub Copilot App',
-    exampleLabel: 'Copilot App',
-  },
 ]
 
-export default function DevToolsEvolutionSlide({ index, project }) {
+export default function DevToolsIdeTuiSlide({ index, project }) {
   return (
-    <Slide index={index} className={styles.devToolsEvolution}>
+    <Slide index={index} className={styles.slide}>
       <div className="accent-bar" />
       <div className={`orb ${styles.orb1}`} />
       <div className={`orb ${styles.orb2}`} />
-      <div className={`orb ${styles.orb3}`} />
 
       <div className={`${styles.body} content-frame content-gutter`}>
         <div className={styles.header}>
@@ -58,18 +44,16 @@ export default function DevToolsEvolutionSlide({ index, project }) {
             Developer Tools Are Evolving
           </Editable>
           <Editable as="p" id="slide.subtitle" className={styles.subtitle}>
-            An improving experience for humans and agents to collaborate
+            From IDE to Terminal UI
           </Editable>
         </div>
 
-        <div className={styles.timeline}>
-          {eras.map((era, i) => (
-            <React.Fragment key={era.id}>
-              <div className={styles.eraColumn} style={{ '--era-glow': era.glow }}>
-                <div
-                  className={`${styles.eraCard} ${styles[`era${i}`]}`}
-                  style={{ '--era-glow': era.glow }}
-                >
+        <div className={styles.splitLayout}>
+          <div className={styles.cardsPanel}>
+            {eras.map((era, i) => (
+              <div key={era.id} className={styles.eraGroup}>
+                {i > 0 && <div className={styles.arrow}>→</div>}
+                <div className={styles.eraCard} style={{ '--era-glow': era.glow }}>
                   <div className={styles.eraIcon}>{era.icon}</div>
                   <div className={styles.eraLabel}>{era.label}</div>
                   <div className={styles.eraName}>
@@ -85,25 +69,23 @@ export default function DevToolsEvolutionSlide({ index, project }) {
                   <div className={styles.eraDate}>{era.era}</div>
                 </div>
                 <div className={styles.exampleBadge}>
-                  {era.exampleLogo ? (
-                    <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
-                  ) : (
-                    <span className={styles.examplePlaceholder}>TBD</span>
-                  )}
+                  <img src={era.exampleLogo} alt={era.exampleAlt} className={styles.exampleLogo} />
                   <span className={styles.exampleLabel}>{era.exampleLabel}</span>
                 </div>
               </div>
-              {i < eras.length - 1 && (
-                <div className={styles.arrow}>→</div>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className={styles.punchline}>
-          <Editable as="p" id="slide.punchline" className={styles.punchlineText}>
-            Evolution, not elimination — different tools for different moments.
-          </Editable>
+          <div className={styles.videoPanel}>
+            <video
+              src={tuiVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={styles.video}
+            />
+          </div>
         </div>
       </div>
 

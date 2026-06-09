@@ -11,6 +11,8 @@ import anwbdevdayAgentsMdSlide from './src/slides/AgentsMdSlide.jsx'
 import anwbdevdayCustomInstructions from './src/slides/CustomInstructions.jsx'
 import anwbdevdaySkillsAndPlans from './src/slides/SkillsAndPlans.jsx'
 import anwbdevdaySdlcInfographic from './src/slides/SdlcInfographic.jsx'
+import anwbdevdayDevToolsIdeTuiSlide from './src/slides/DevToolsIdeTuiSlide.jsx'
+import anwbdevdayDevToolsTuiAdeSlide from './src/slides/DevToolsTuiAdeSlide.jsx'
 import anwbdevdayDevToolsEvolutionSlide from './src/slides/DevToolsEvolutionSlide.jsx'
 import structuredvibecodingClosingSlide from './src/slides/ClosingSlide.jsx'
 import anwbdevdayIqPlatformSlide from './src/slides/IqPlatformSlide.jsx'
@@ -37,8 +39,9 @@ export default {
     anwbdevdayAgenticDivider,
     anwbdevdayPromptPraySlide,
     anwbdevdayCopilotCliScreenSlide,
+    anwbdevdayDevToolsIdeTuiSlide,
+    anwbdevdayDevToolsTuiAdeSlide,
     anwbdevdayDevToolsEvolutionSlide,
-    anwbdevdaySdlcInfographic,
     anwbdevdayClosingQuoteSlide,
     structuredvibecodingClosingSlide,
     CustomThankYouSlide,

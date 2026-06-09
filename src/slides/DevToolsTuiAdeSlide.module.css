@@ -1,4 +1,4 @@
-.devToolsEvolution {
+.slide {
   background: var(--bg-deep);
   flex-direction: column;
   padding: 0 0 44px 0;
@@ -13,40 +13,32 @@
   justify-content: center;
   flex: 1;
   min-height: 0;
-  gap: 3.5rem;
+  gap: 2rem;
 }
 
-/* Orbs */
 .orb1 {
   width: 500px;
   height: 500px;
   top: -15%;
-  left: -10%;
-  background: radial-gradient(circle, var(--blue-glow), transparent 70%);
+  right: -10%;
+  background: radial-gradient(circle, var(--purple), transparent 70%);
   opacity: 0.25;
 }
+
 .orb2 {
   width: 600px;
   height: 600px;
   bottom: -20%;
-  right: -15%;
-  background: radial-gradient(circle, var(--purple), transparent 70%);
-  opacity: 0.2;
-}
-.orb3 {
-  width: 400px;
-  height: 400px;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -15%;
   background: radial-gradient(circle, var(--green), transparent 70%);
-  opacity: 0.12;
+  opacity: 0.2;
 }
 
 /* Header */
 .header {
   text-align: left;
 }
+
 .title {
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 800;
@@ -59,45 +51,64 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .subtitle {
   font-size: clamp(15px, 1.5vw, 18px);
   color: var(--text-muted);
   margin: 0;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 640px;
 }
 
-/* Timeline */
-.timeline {
-  position: relative;
+/* Split layout */
+.splitLayout {
   display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.cardsPanel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   flex: 0 0 auto;
 }
 
-/* Era cards */
-.eraColumn {
+.eraGroup {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  padding-bottom: 0;
+  gap: 1.5rem;
+}
+
+.eraGroup:not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+.eraGroup:not(:first-child)::before {
+  content: '→';
+  position: absolute;
+  left: -1.2rem;
+  top: 50%;
+  transform: translateY(-100%);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text);
+  opacity: 0.7;
+  text-shadow: 0 0 20px var(--purple);
 }
 
 .eraCard {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  width: 280px;
-  flex: 1 1 auto;
-  padding: 1.4rem 1.2rem;
+  gap: 0.4rem;
+  width: 220px;
+  padding: 1.2rem 1rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -114,19 +125,14 @@
               0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.era2 {
-  border-color: rgba(63, 185, 80, 0.3);
-  background: rgba(63, 185, 80, 0.04);
-}
-
 .eraIcon {
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1;
   filter: drop-shadow(0 0 12px var(--era-glow));
 }
 
 .eraLabel {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   color: var(--text);
@@ -134,7 +140,7 @@
 }
 
 .eraName {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -143,20 +149,20 @@
 }
 
 .eraDesc {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-align: center;
   line-height: 1.5;
   opacity: 0.8;
-  max-width: 220px;
+  max-width: 200px;
 }
 
 .eraDate {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.1em;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   background: rgba(63, 185, 80, 0.08);
   border-radius: 99px;
   border: 1px solid rgba(63, 185, 80, 0.15);
@@ -169,66 +175,62 @@
   align-items: center;
   gap: 0.3rem;
 }
+
 .exampleLogo {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   filter: drop-shadow(0 0 6px var(--era-glow));
 }
-.examplePlaceholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  font-size: 0.55rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 4px;
-  letter-spacing: 0.04em;
-}
+
 .exampleLabel {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.02em;
 }
 
-/* Arrow between cards */
-.arrow {
+/* Video panel */
+.videoPanel {
+  flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--text);
-  opacity: 0.7;
-  text-shadow: 0 0 20px var(--era-glow), 0 0 40px var(--era-glow);
-  flex-shrink: 0;
-  width: 2rem;
-  align-self: center;
-  margin-bottom: 5.5rem;
-  animation: arrowPulse 2s ease-in-out infinite;
+  overflow: hidden;
 }
 
-@keyframes arrowPulse {
-  0%, 100% { opacity: 0.7; transform: translateY(-50%) translateX(0); }
-  50% { opacity: 1; transform: translateY(-50%) translateX(6px); }
+.videoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-/* Punchline */
-.punchline {
-  text-align: center;
+.placeholderIcon {
+  font-size: 3rem;
+  opacity: 0.5;
 }
-.punchlineText {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text);
+
+.placeholderText {
+  font-size: 0.9rem;
+  color: var(--text-muted);
   margin: 0;
-  letter-spacing: -0.02em;
-  background: linear-gradient(90deg, var(--blue-glow), var(--purple), var(--green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  opacity: 0.6;
+}
+
+.video {
+  max-height: 60vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
