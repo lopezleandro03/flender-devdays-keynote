@@ -30,7 +30,7 @@ export default {
   title: 'Flender DevDays keynote',
   subtitle: 'A composed presentation',
   icon: '🔀',
-  accent: '#3fb950',
+  accent: '#3b82f6',
   slides: [
     CoverSlide,
     anwbdevdayAgenticEvolutionSlide,
