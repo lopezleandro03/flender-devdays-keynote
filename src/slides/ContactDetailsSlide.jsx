@@ -1,6 +1,6 @@
 import { BottomBar, Editable, Slide } from '@deckio/deck-engine'
 import styles from './ContactDetailsSlide.module.css'
-import closingBg from '../data/logos/closing-bg.png'
+import devdaysCard from '../data/logos/devdays-card.png'
 import flenderLogo from '../data/logos/flender.png'
 
 export default function ContactDetailsSlide({ index, project }) {
@@ -21,7 +21,7 @@ export default function ContactDetailsSlide({ index, project }) {
         <div className={styles.columns}>
           {/* Left: branded card image */}
           <div className={styles.cardColumn}>
-            <img src={closingBg} alt="Flender DevDays" className={styles.cardImage} />
+            <img src={devdaysCard} alt="Flender DevDays" className={styles.cardImage} />
           </div>
 
           {/* Right: contact info */}
