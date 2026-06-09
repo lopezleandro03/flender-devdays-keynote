@@ -26,20 +26,12 @@ export default function ContactDetailsSlide({ index, project }) {
 
           {/* Right: contact info */}
           <div className={styles.infoColumn}>
-            <Editable as="h2" id="slide.name">JOHN DOE</Editable>
-            <Editable as="p" id="slide.position" className={styles.position}>Description of the position</Editable>
-            <Editable as="p" id="slide.department" className={styles.department}>Group / region / department XY</Editable>
-
-            <div className={styles.addressBlock}>
-              <Editable as="p" id="slide.street">Street</Editable>
-              <Editable as="p" id="slide.city">ZIP code / city</Editable>
-              <Editable as="p" id="slide.country">Country</Editable>
-            </div>
+            <Editable as="h2" id="slide.name">LEANDRO LOPEZ</Editable>
+            <Editable as="p" id="slide.position" className={styles.position}>Solution Engineering Lead</Editable>
+            <Editable as="p" id="slide.department" className={styles.department}>Microsoft Netherlands</Editable>
 
             <div className={styles.contactBlock}>
-              <Editable as="p" id="slide.phone">P +49 2871 92 1234</Editable>
-              <Editable as="p" id="slide.mobile">M +49 152 1234 5678</Editable>
-              <Editable as="p" id="slide.email">john.doe@flender.com</Editable>
+              <Editable as="p" id="slide.email">leandrolopez@microsoft.com</Editable>
             </div>
           </div>
         </div>
