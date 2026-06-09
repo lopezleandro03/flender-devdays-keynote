@@ -23,6 +23,7 @@ import anwbdevdayDemoAnnouncementSlide from './src/slides/DemoAnnouncementSlide.
 import anwbdevdayClosingQuoteSlide from './src/slides/ClosingQuoteSlide.jsx'
 import { GenericThankYouSlide as ThankYouSlide } from '@deckio/deck-engine'
 import ClosingImageSlide from './src/slides/ClosingImageSlide.jsx'
+import ContactDetailsSlide from './src/slides/ContactDetailsSlide.jsx'
 import CustomThankYouSlide from './src/slides/ThankYouSlide.jsx'
 
 export default {
@@ -49,6 +50,7 @@ export default {
     anwbdevdayClosingQuoteSlide,
     structuredvibecodingClosingSlide,
     ClosingImageSlide,
+    ContactDetailsSlide,
     CustomThankYouSlide,
   ],
 }
