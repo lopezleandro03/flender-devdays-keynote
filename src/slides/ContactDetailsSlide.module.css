@@ -13,6 +13,7 @@
   min-height: 0;
   justify-content: flex-start;
   gap: 0;
+  padding-top: 4rem;
 }
 
 .orb1 {
@@ -31,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .header h1 {
@@ -107,7 +108,7 @@
 }
 
 .contactBlock {
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
 }
 
 .contactBlock p {
@@ -122,27 +123,27 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1.5rem;
-  padding-top: 0.75rem;
+  gap: 2rem;
+  padding: 1rem 0;
   border-top: 1px solid #e0e0e0;
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
 
 .website {
   color: #0078d4;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 .bottomLogos {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .linkedinIcon {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: #0078d4;
 }
 
@@ -151,7 +152,7 @@
   height: 20rem;
   object-fit: contain;
   border-radius: 4px;
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
 }
 
 .microsoftPlaceholder {
@@ -160,6 +161,6 @@
 }
 
 .microsoftLogo {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
